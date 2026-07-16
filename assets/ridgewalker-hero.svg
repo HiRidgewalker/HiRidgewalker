@@ -4,26 +4,26 @@
 
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#080b0a" />
-      <stop offset="0.52" stop-color="#0d1412" />
-      <stop offset="1" stop-color="#07100d" />
+      <stop offset="0" stop-color="#050505" />
+      <stop offset="0.52" stop-color="#111111" />
+      <stop offset="1" stop-color="#000000" />
     </linearGradient>
 
     <linearGradient id="ridgeStroke" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#335d51" stop-opacity="0.15" />
-      <stop offset="0.34" stop-color="#65d6b4" stop-opacity="0.75" />
-      <stop offset="0.62" stop-color="#b3ffe6" />
-      <stop offset="1" stop-color="#2f6e5c" stop-opacity="0.2" />
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.05" />
+      <stop offset="0.34" stop-color="#bdbdbd" stop-opacity="0.58" />
+      <stop offset="0.62" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#8f8f8f" stop-opacity="0.12" />
     </linearGradient>
 
     <radialGradient id="ambientGlow" cx="50%" cy="48%" r="50%">
-      <stop offset="0" stop-color="#10a37f" stop-opacity="0.2" />
-      <stop offset="0.52" stop-color="#10a37f" stop-opacity="0.05" />
-      <stop offset="1" stop-color="#10a37f" stop-opacity="0" />
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.11" />
+      <stop offset="0.52" stop-color="#ffffff" stop-opacity="0.025" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
     </radialGradient>
 
     <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#a7dccc" stroke-opacity="0.035" stroke-width="1" />
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1" />
     </pattern>
 
     <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
@@ -43,7 +43,7 @@
     <style>
       .contour {
         fill: none;
-        stroke: #95cbbb;
+        stroke: #d6d6d6;
         stroke-linecap: round;
         stroke-width: 1;
       }
@@ -70,7 +70,7 @@
       }
 
       .node {
-        fill: #9af4d7;
+        fill: #f5f5f5;
         transform-box: fill-box;
         transform-origin: center;
         animation: nodePulse 4s ease-in-out infinite;
@@ -82,7 +82,7 @@
 
       .signal-ring {
         fill: none;
-        stroke: #86e8c9;
+        stroke: #d8d8d8;
         stroke-width: 1;
         transform-box: fill-box;
         transform-origin: center;
@@ -90,12 +90,12 @@
       }
 
       .runner {
-        fill: #d9fff3;
+        fill: #ffffff;
         filter: url(#softGlow);
       }
 
       .title {
-        fill: #f3f7f5;
+        fill: #f7f7f7;
         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
         font-size: 64px;
         font-weight: 500;
@@ -110,19 +110,19 @@
       }
 
       .eyebrow {
-        fill: #75d7b9;
+        fill: #d0d0d0;
         font-size: 11px;
         letter-spacing: 4px;
       }
 
       .tagline {
-        fill: #a5b8b2;
+        fill: #a3a3a3;
         font-size: 13px;
         letter-spacing: 3px;
       }
 
       .meta {
-        fill: #648078;
+        fill: #737373;
         font-size: 9px;
         letter-spacing: 2px;
       }
@@ -164,7 +164,7 @@
   <rect width="1200" height="420" rx="24" fill="url(#background)" />
   <rect width="1200" height="420" rx="24" fill="url(#grid)" />
   <ellipse cx="645" cy="210" rx="470" ry="250" fill="url(#ambientGlow)" />
-  <ellipse cx="650" cy="242" rx="300" ry="58" fill="#10a37f" fill-opacity="0.07" filter="url(#wideGlow)" />
+  <ellipse cx="650" cy="242" rx="300" ry="58" fill="#ffffff" fill-opacity="0.045" filter="url(#wideGlow)" />
 
   <g aria-hidden="true">
     <path class="contour contour-a" d="M -45 372 C 82 353 132 332 224 342 C 320 352 363 282 447 294 C 535 306 572 217 656 244 C 745 272 780 183 861 213 C 940 242 976 190 1049 226 C 1120 261 1164 250 1245 223" />
@@ -173,10 +173,10 @@
     <path class="contour contour-b" d="M -28 294 C 86 289 115 240 205 257 C 291 272 317 176 402 198 C 487 220 514 103 611 148 C 690 185 730 70 817 117 C 889 156 919 86 997 135 C 1063 177 1109 143 1233 126" />
     <path class="contour contour-a" d="M -20 270 C 83 269 108 216 195 232 C 278 248 302 148 387 174 C 472 201 497 76 596 124 C 674 163 714 42 803 92 C 875 133 904 62 984 112 C 1049 153 1099 116 1229 100" />
 
-    <path d="M 52 64 H 136 M 52 64 V 104" fill="none" stroke="#72968b" stroke-opacity="0.35" />
-    <path d="M 1148 64 H 1064 M 1148 64 V 104" fill="none" stroke="#72968b" stroke-opacity="0.35" />
-    <path d="M 52 356 H 136 M 52 356 V 316" fill="none" stroke="#72968b" stroke-opacity="0.35" />
-    <path d="M 1148 356 H 1064 M 1148 356 V 316" fill="none" stroke="#72968b" stroke-opacity="0.35" />
+    <path d="M 52 64 H 136 M 52 64 V 104" fill="none" stroke="#8d8d8d" stroke-opacity="0.35" />
+    <path d="M 1148 64 H 1064 M 1148 64 V 104" fill="none" stroke="#8d8d8d" stroke-opacity="0.35" />
+    <path d="M 52 356 H 136 M 52 356 V 316" fill="none" stroke="#8d8d8d" stroke-opacity="0.35" />
+    <path d="M 1148 356 H 1064 M 1148 356 V 316" fill="none" stroke="#8d8d8d" stroke-opacity="0.35" />
 
     <use href="#ridgePath" class="ridge" />
 
@@ -206,6 +206,6 @@
   <g aria-hidden="true">
     <text class="meta" x="94" y="379">BUILD / RESEARCH / WRITE</text>
     <text class="meta" x="1106" y="379" text-anchor="end">SIGNAL: ONLINE</text>
-    <circle cx="1118" cy="376" r="2.5" fill="#7de2c2" />
+    <circle cx="1118" cy="376" r="2.5" fill="#ffffff" />
   </g>
 </svg>

@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">ridgewalker</title>
+  <desc id="desc">An animated digital ridge with contour lines, signal nodes, and the words building at the edge of code, markets and ideas.</desc>
+
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#080b0a" />
+      <stop offset="0.52" stop-color="#0d1412" />
+      <stop offset="1" stop-color="#07100d" />
+    </linearGradient>
+
+    <linearGradient id="ridgeStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#335d51" stop-opacity="0.15" />
+      <stop offset="0.34" stop-color="#65d6b4" stop-opacity="0.75" />
+      <stop offset="0.62" stop-color="#b3ffe6" />
+      <stop offset="1" stop-color="#2f6e5c" stop-opacity="0.2" />
+    </linearGradient>
+
+    <radialGradient id="ambientGlow" cx="50%" cy="48%" r="50%">
+      <stop offset="0" stop-color="#10a37f" stop-opacity="0.2" />
+      <stop offset="0.52" stop-color="#10a37f" stop-opacity="0.05" />
+      <stop offset="1" stop-color="#10a37f" stop-opacity="0" />
+    </radialGradient>
+
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#a7dccc" stroke-opacity="0.035" stroke-width="1" />
+    </pattern>
+
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="wideGlow" x="-50%" y="-100%" width="200%" height="300%">
+      <feGaussianBlur stdDeviation="24" />
+    </filter>
+
+    <path id="ridgePath" d="M -30 338 C 98 326 137 292 227 307 C 313 321 346 238 430 254 C 517 271 542 166 637 205 C 718 238 756 136 841 175 C 915 209 948 147 1020 190 C 1087 229 1132 210 1230 187" />
+
+    <style>
+      .contour {
+        fill: none;
+        stroke: #95cbbb;
+        stroke-linecap: round;
+        stroke-width: 1;
+      }
+
+      .contour-a {
+        opacity: 0.1;
+        stroke-dasharray: 7 12;
+        animation: contourFlow 18s linear infinite;
+      }
+
+      .contour-b {
+        opacity: 0.07;
+        stroke-dasharray: 3 15;
+        animation: contourFlow 24s linear infinite reverse;
+      }
+
+      .ridge {
+        fill: none;
+        stroke: url(#ridgeStroke);
+        stroke-linecap: round;
+        stroke-width: 2;
+        stroke-dasharray: 12 8;
+        animation: ridgeFlow 10s linear infinite;
+      }
+
+      .node {
+        fill: #9af4d7;
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: nodePulse 4s ease-in-out infinite;
+      }
+
+      .node-delay-1 { animation-delay: -1.2s; }
+      .node-delay-2 { animation-delay: -2.4s; }
+      .node-delay-3 { animation-delay: -3.1s; }
+
+      .signal-ring {
+        fill: none;
+        stroke: #86e8c9;
+        stroke-width: 1;
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: ringPulse 4s ease-out infinite;
+      }
+
+      .runner {
+        fill: #d9fff3;
+        filter: url(#softGlow);
+      }
+
+      .title {
+        fill: #f3f7f5;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        font-size: 64px;
+        font-weight: 500;
+        letter-spacing: -3px;
+      }
+
+      .eyebrow,
+      .tagline,
+      .meta {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        text-transform: uppercase;
+      }
+
+      .eyebrow {
+        fill: #75d7b9;
+        font-size: 11px;
+        letter-spacing: 4px;
+      }
+
+      .tagline {
+        fill: #a5b8b2;
+        font-size: 13px;
+        letter-spacing: 3px;
+      }
+
+      .meta {
+        fill: #648078;
+        font-size: 9px;
+        letter-spacing: 2px;
+      }
+
+      @keyframes ridgeFlow {
+        to { stroke-dashoffset: -200; }
+      }
+
+      @keyframes contourFlow {
+        to { stroke-dashoffset: -180; }
+      }
+
+      @keyframes nodePulse {
+        0%, 100% { opacity: 0.35; transform: scale(0.82); }
+        50% { opacity: 1; transform: scale(1.25); }
+      }
+
+      @keyframes ringPulse {
+        0% { opacity: 0.7; transform: scale(0.45); }
+        75%, 100% { opacity: 0; transform: scale(1.65); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .contour-a,
+        .contour-b,
+        .ridge,
+        .node,
+        .signal-ring {
+          animation: none;
+        }
+
+        .runner {
+          display: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="420" rx="24" fill="url(#background)" />
+  <rect width="1200" height="420" rx="24" fill="url(#grid)" />
+  <ellipse cx="645" cy="210" rx="470" ry="250" fill="url(#ambientGlow)" />
+  <ellipse cx="650" cy="242" rx="300" ry="58" fill="#10a37f" fill-opacity="0.07" filter="url(#wideGlow)" />
+
+  <g aria-hidden="true">
+    <path class="contour contour-a" d="M -45 372 C 82 353 132 332 224 342 C 320 352 363 282 447 294 C 535 306 572 217 656 244 C 745 272 780 183 861 213 C 940 242 976 190 1049 226 C 1120 261 1164 250 1245 223" />
+    <path class="contour contour-b" d="M -55 393 C 79 373 132 356 229 365 C 326 375 374 315 460 324 C 551 334 590 258 673 281 C 760 305 805 231 883 255 C 962 280 1005 238 1077 269 C 1146 299 1187 289 1255 267" />
+    <path class="contour contour-a" d="M -36 317 C 86 306 124 267 215 282 C 300 296 332 203 418 222 C 501 240 529 129 625 172 C 704 207 744 99 831 141 C 905 177 934 110 1009 157 C 1074 197 1122 173 1234 152" />
+    <path class="contour contour-b" d="M -28 294 C 86 289 115 240 205 257 C 291 272 317 176 402 198 C 487 220 514 103 611 148 C 690 185 730 70 817 117 C 889 156 919 86 997 135 C 1063 177 1109 143 1233 126" />
+    <path class="contour contour-a" d="M -20 270 C 83 269 108 216 195 232 C 278 248 302 148 387 174 C 472 201 497 76 596 124 C 674 163 714 42 803 92 C 875 133 904 62 984 112 C 1049 153 1099 116 1229 100" />
+
+    <path d="M 52 64 H 136 M 52 64 V 104" fill="none" stroke="#72968b" stroke-opacity="0.35" />
+    <path d="M 1148 64 H 1064 M 1148 64 V 104" fill="none" stroke="#72968b" stroke-opacity="0.35" />
+    <path d="M 52 356 H 136 M 52 356 V 316" fill="none" stroke="#72968b" stroke-opacity="0.35" />
+    <path d="M 1148 356 H 1064 M 1148 356 V 316" fill="none" stroke="#72968b" stroke-opacity="0.35" />
+
+    <use href="#ridgePath" class="ridge" />
+
+    <g>
+      <circle class="signal-ring" cx="227" cy="307" r="11" />
+      <circle class="node" cx="227" cy="307" r="3" />
+      <circle class="signal-ring" cx="637" cy="205" r="11" style="animation-delay:-2s" />
+      <circle class="node node-delay-1" cx="637" cy="205" r="3" />
+      <circle class="signal-ring" cx="841" cy="175" r="11" style="animation-delay:-3s" />
+      <circle class="node node-delay-2" cx="841" cy="175" r="3" />
+      <circle class="node node-delay-3" cx="1020" cy="190" r="2.5" />
+    </g>
+
+    <circle class="runner" r="4">
+      <animateMotion dur="8s" repeatCount="indefinite" rotate="auto">
+        <mpath href="#ridgePath" />
+      </animateMotion>
+    </circle>
+  </g>
+
+  <g transform="translate(94 92)">
+    <text class="eyebrow" x="0" y="0">// DIGITAL RIDGE · PROFILE</text>
+    <text class="title" x="-3" y="73">ridgewalker</text>
+    <text class="tagline" x="1" y="110">BUILDING AT THE EDGE OF CODE, MARKETS &amp; IDEAS</text>
+  </g>
+
+  <g aria-hidden="true">
+    <text class="meta" x="94" y="379">BUILD / RESEARCH / WRITE</text>
+    <text class="meta" x="1106" y="379" text-anchor="end">SIGNAL: ONLINE</text>
+    <circle cx="1118" cy="376" r="2.5" fill="#7de2c2" />
+  </g>
+</svg>

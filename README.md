@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/ridgewalker-hero.svg" alt="ridgewalker — building at the edge of code, markets and ideas" width="100%" />
+  <img src="assets/header_image.png" alt="ridgewalker — building at the edge of code, markets and ideas" width="100%" />
 </p>
 
 <p align="center">
